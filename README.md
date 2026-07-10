@@ -55,7 +55,7 @@ movie-genre-classification/
 │
 ├── data/
 │
-├── models/
+├── models/     
 │   ├── best_model.joblib
 │   └── tfidf_vectorizer.joblib
 │
