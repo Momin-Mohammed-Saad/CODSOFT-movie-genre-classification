@@ -5,5 +5,4 @@ nltk
 matplotlib
 seaborn
 joblib
-jupyter
-ipykernel
+streamlit
