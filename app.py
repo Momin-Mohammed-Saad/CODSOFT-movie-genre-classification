@@ -1,5 +1,6 @@
 import streamlit as st
 import joblib
+from text_preprocessing import preprocess_text
 
 # Page Configuration
 st.set_page_config(
@@ -28,7 +29,15 @@ movie_description =  st.text_area(
 predict_button = st.button("Predict Genre")
 
 if predict_button:
-    st.write("Input Received ✅")
-    st.write(movie_description)
+
+    clean_text = preprocess_text(movie_description)
+
+    vector = vectorizer.transform([clean_text])
+
+    prediction = model.predict(vector)
+
+    st.success(f"Predicted Genre: {prediction[0]}")
+
+
 
     
