@@ -13,10 +13,6 @@ __pycache__/
 # VS Code
 .vscode/
 
-# Model Files
-*.joblib
-*.pkl
-
 # OS Files
 .DS_Store
 Thumbs.db

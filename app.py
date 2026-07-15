@@ -15,7 +15,7 @@ vectorizer = joblib.load("models/tfidf_vectorizer.joblib")
 
 # App Title
 st.title("🎬 Movie Genre Classification")
-
+st.markdown("---")
 st.write("Predict the genre of a movie using its plot summary.")
 
 # user input
@@ -30,14 +30,13 @@ predict_button = st.button("Predict Genre")
 
 if predict_button:
 
-    clean_text = preprocess_text(movie_description)
+    if movie_description.strip() == "":
+        st.error("Description cannot be empty. Please enter a movie description.")
+    else:
+        clean_text = preprocess_text(movie_description)
+        vector = vectorizer.transform([clean_text])
+        prediction = model.predict(vector)
 
-    vector = vectorizer.transform([clean_text])
+        st.success(f"🎬 Predicted Genre: {prediction[0].title()}")
 
-    prediction = model.predict(vector)
-
-    st.success(f"Predicted Genre: {prediction[0]}")
-
-
-
-    
+st.markdown("---")
