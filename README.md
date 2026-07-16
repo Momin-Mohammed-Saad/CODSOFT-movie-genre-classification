@@ -146,6 +146,6 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## 👨‍💻 Author
+##  Author
 
-**Momin Saad**
+**Momin saad**
