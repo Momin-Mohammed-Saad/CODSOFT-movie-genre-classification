@@ -1,8 +1,20 @@
 import re
 import string
+import nltk
 
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
+
+# Download NLTK resources only if missing
+try:
+    nltk.data.find("corpora/stopwords")
+except LookupError:
+    nltk.download("stopwords")
+
+try:
+    nltk.data.find("corpora/wordnet")
+except LookupError:
+    nltk.download("wordnet")
 
 stop_words = set(stopwords.words("english"))
 lemmatizer = WordNetLemmatizer()
@@ -45,7 +57,6 @@ def lemmatize_text(text):
 
 
 def preprocess_text(text):
-
     text = to_lowercase(text)
     text = remove_html(text)
     text = remove_urls(text)
