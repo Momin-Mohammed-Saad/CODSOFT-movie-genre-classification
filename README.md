@@ -54,22 +54,23 @@ Dataset contains:
 movie-genre-classification/
 │
 ├── data/
-│
-├── models/     
+├── models/
 │   ├── best_model.joblib
 │   └── tfidf_vectorizer.joblib
-│
 ├── notebooks/
 │   ├── 01_Data_Loading_EDA.ipynb
 │   ├── 02_Text_Preprocessing_TFIDF.ipynb
 │   └── 03_Model_Training_Evaluation.ipynb
-│
-├── .gitignore
+├── app.py
+├── text_preprocessing.py
 ├── requirements.txt
-└── README.md
+├── README.md
+└── .gitignore
 ```
 
 ---
+
+## 🛠️ Technologies Used
 
 ## 🛠️ Technologies Used
 
@@ -81,6 +82,7 @@ movie-genre-classification/
 - Matplotlib
 - Seaborn
 - Joblib
+- Streamlit
 - Jupyter Notebook
 
 ---
@@ -117,16 +119,33 @@ The following models were trained and evaluated:
 
 ---
 
-## 🚀 Future Improvements
+## ✨ Features
 
-- Deploy the model using Streamlit.
-- Experiment with Word2Vec and GloVe embeddings.
-- Fine-tune hyperparameters.
-- Train transformer-based models such as BERT.
-- Improve performance on minority genres.
+- Predicts movie genres from plot summaries
+- NLP-based text preprocessing
+- TF-IDF feature extraction
+- Logistic Regression classifier
+- Interactive Streamlit web application
+- Trained model saved using Joblib
 
 ---
 
+## 🚀 Installation
+
+```bash
+git clone https://github.com/<your-username>/<repo-name>.git
+cd <repo-name>
+
+python -m venv .venv
+
+# Windows
+.venv\Scripts\activate
+
+pip install -r requirements.txt
+
+streamlit run app.py
+```
+
 ## 👨‍💻 Author
 
-**Saad Siddiqui**
+**Momin Saad**
